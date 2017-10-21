@@ -1,4 +1,4 @@
-package com.websystique.springboot.util;
+package com.springboot.util;
 
 
 public class CustomErrorType {

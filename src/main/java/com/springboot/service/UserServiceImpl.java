@@ -1,14 +1,12 @@
-package com.websystique.springboot.service;
+package com.springboot.service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import com.springboot.model.User;
 import org.springframework.stereotype.Service;
-
-import com.websystique.springboot.model.User;
-
 
 
 @Service("userService")

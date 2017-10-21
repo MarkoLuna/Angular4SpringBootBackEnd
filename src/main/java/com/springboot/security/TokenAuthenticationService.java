@@ -1,4 +1,4 @@
-package com.websystique.springboot.security;
+package com.springboot.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,4 +1,4 @@
-package com.websystique.springboot.security;
+package com.springboot.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;

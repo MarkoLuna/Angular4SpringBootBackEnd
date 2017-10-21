@@ -1,15 +1,15 @@
-package com.websystique.springboot;
+package com.springboot;
 
+import com.springboot.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.websystique.springboot.model.User;
-import com.websystique.springboot.repositories.UserRepository;
+import com.springboot.repositories.UserRepository;
 
 // same as @Configuration @EnableAutoConfiguration @ComponentScan combined
-@SpringBootApplication(scanBasePackages = { "com.websystique.springboot" })
+@SpringBootApplication(scanBasePackages = { "com.springboot" })
 public class SpringBootRestApiApp implements CommandLineRunner {
 
 	@Autowired
@@ -34,11 +34,11 @@ public class SpringBootRestApiApp implements CommandLineRunner {
 		}
 
 		// fetch an individual user
-		System.out.println("Users found with findByFirstName('Alice'):");
+		System.out.println("Users found with findByFirstName('Marcos'):");
 		System.out.println("--------------------------------");
 		System.out.println(userRepository.findByName("Marcos"));
 
-		System.out.println("Users found with findByLastName('Smith'):");
+		System.out.println("Users found with findByLastName('Gerardo'):");
 		System.out.println("--------------------------------");
 		System.out.println(userRepository.findByName("Gerardo"));
 	}

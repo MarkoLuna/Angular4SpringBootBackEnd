@@ -1,10 +1,10 @@
-package com.websystique.springboot;
+package com.springboot;
  
 import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import com.websystique.springboot.model.User;
+import com.springboot.model.User;
 import org.springframework.web.client.RestTemplate;
  
 

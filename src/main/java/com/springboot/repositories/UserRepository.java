@@ -1,8 +1,7 @@
-package com.websystique.springboot.repositories;
+package com.springboot.repositories;
 
+import com.springboot.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.websystique.springboot.model.User;
 
 public interface UserRepository extends MongoRepository<User, String>{
 	

@@ -1,11 +1,11 @@
-package com.websystique.springboot.service;
+package com.springboot.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.websystique.springboot.model.User;
-import com.websystique.springboot.repositories.UserRepository;
+import com.springboot.model.User;
+import com.springboot.repositories.UserRepository;
 
 public class UsersService {
 	

@@ -1,4 +1,4 @@
-package com.websystique.springboot.security;
+package com.springboot.security;
 
 public class AccountCredentials {
 	private String username;

@@ -1,4 +1,4 @@
-package com.websystique.springboot.security;
+package com.springboot.security;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

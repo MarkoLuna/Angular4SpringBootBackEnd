@@ -1,4 +1,4 @@
-package com.websystique.springboot.security;
+package com.springboot.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
