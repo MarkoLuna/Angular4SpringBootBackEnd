@@ -19,13 +19,8 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
 			throws IOException, ServletException {
 		
 //		HttpServletRequest request = (HttpServletRequest) req;
-        HttpServletResponse response = (HttpServletResponse) res;
-        
-        response.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:4200");
-        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
-        response.setHeader("Access-Control-Max-Age", "3600");
-        response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-		
+		CorsConfigUtils.config((HttpServletResponse) res, (HttpServletRequest) req);
+
 		Authentication authentication = TokenAuthenticationService.getAuthentication((HttpServletRequest) req);
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);

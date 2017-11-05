@@ -20,7 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.springboot.util.CustomErrorType;
 
-@CrossOrigin
+// @CrossOrigin
 @RestController
 @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RestApiController {
@@ -128,5 +128,3 @@ public class RestApiController {
 	}
 
 }
-
-//http://localhost:8080/SpringBootRestApi/api/user/

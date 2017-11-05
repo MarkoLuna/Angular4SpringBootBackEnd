@@ -13,7 +13,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers(HttpMethod.POST, "/login")
+		http.csrf().disable().authorizeRequests()
+				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+				.antMatchers("/").permitAll()
+				.antMatchers(HttpMethod.POST, "/login")
 				.permitAll().anyRequest().authenticated().and()
 				// We filter the api/login requests
 				.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
@@ -27,5 +30,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// Create a default account
 		auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
 	}
+
 
 }

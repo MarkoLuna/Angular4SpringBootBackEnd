@@ -26,13 +26,9 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
 			throws AuthenticationException, IOException, ServletException {
-		
-		res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:4200");
-		res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE, PATCH");
-		res.setHeader("Access-Control-Max-Age", "3600");
-		res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
-		res.setHeader("Access-Control-Expose-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
-		
+
+		CorsConfigUtils.config(res, req);
+
 		try{
 			AccountCredentials creds = new ObjectMapper().readValue(req.getInputStream(), AccountCredentials.class);
 			
