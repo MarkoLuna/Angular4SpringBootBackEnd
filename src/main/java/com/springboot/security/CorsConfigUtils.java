@@ -18,20 +18,6 @@ public class CorsConfigUtils {
         response.setHeader("Access-Control-Allow-Headers", HEADERS);
         response.setHeader("Access-Control-Expose-Headers", HEADERS);
         response.setHeader("Access-Control-Allow-Credentials", "true");
-
-        /*
-        String method = request.getMethod();
-
-        int status = response.getStatus();
-
-        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-            response.setStatus(HttpServletResponse.SC_OK);
-        }
-        status = response.getStatus();
-        method = request.getMethod();
-        */
-
-        String token = response.getHeader(TokenAuthenticationService.HEADER_STRING);
-        token = response.getHeader(TokenAuthenticationService.HEADER_STRING.toLowerCase());
+        
     }
 }
