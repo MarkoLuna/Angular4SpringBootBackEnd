@@ -3,6 +3,10 @@
 
 *.project
 
-*.idea
+*.idea/*
 
-*.settings
+*target/*
+
+*.settings/*
+
+*.DS_Store

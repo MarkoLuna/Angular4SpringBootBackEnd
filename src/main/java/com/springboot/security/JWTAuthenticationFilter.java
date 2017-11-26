@@ -17,9 +17,6 @@ public class JWTAuthenticationFilter extends GenericFilterBean {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain filterChain)
 			throws IOException, ServletException {
-		
-//		HttpServletRequest request = (HttpServletRequest) req;
-		CorsConfigUtils.config((HttpServletResponse) res, (HttpServletRequest) req);
 
 		Authentication authentication = TokenAuthenticationService.getAuthentication((HttpServletRequest) req);
 

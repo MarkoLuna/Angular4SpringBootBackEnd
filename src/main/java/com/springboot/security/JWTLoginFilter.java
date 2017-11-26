@@ -27,8 +27,6 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
 			throws AuthenticationException, IOException, ServletException {
 
-		CorsConfigUtils.config(res, req);
-
 		try{
 			AccountCredentials creds = new ObjectMapper().readValue(req.getInputStream(), AccountCredentials.class);
 			
