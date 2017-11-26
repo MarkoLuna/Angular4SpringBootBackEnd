@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	CorsConfigurationSource corsConfigurationSource() {
 
 		List<String> METHODS = Arrays.asList("POST", "GET", "PUT", "OPTIONS", "DELETE", "PATCH");
-		List<String> ORIGINS = Arrays.asList("http://127.0.0.1:4200"); // ,"http://localhost:4200"
+		List<String> ORIGINS = Arrays.asList("http://127.0.0.1:4200","http://localhost:4200");
 		List<String> HEADERS = Arrays.asList("Authorization", "authorization",
 				"Origin", "X-Requested-With", "Content-Type", "Accept", "X-XSRF-TOKEN", "credential");
 
