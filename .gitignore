@@ -1,12 +1,14 @@
 
-*.classpath
+.classpath
 
-*.project
+.project
 
-*.idea/*
+.idea/
 
-*target/*
+target/
 
-*.settings/*
+.settings/
 
-*.DS_Store
+.DS_Store
+
+SpringBootRestApiExample.iml
