@@ -10,6 +10,8 @@ public class User {
 	private String id;
 	
 	private String name;
+
+	private String password;
 	
 	private int age;
 	
@@ -19,10 +21,11 @@ public class User {
 		
 	}
 	
-	public User(String name, int age, double salary){
+	public User(String name, int age, double salary, String password){
 		this.name = name;
 		this.age = age;
 		this.salary = salary;
+		this.password = password;
 	}
 	
 	public String getName() {
@@ -57,25 +60,22 @@ public class User {
 		this.id = id;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id != other.id)
-			return false;
-		return true;
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age
-				+ ", salary=" + salary + "]";
+		return "User{" +
+				"id='" + id + '\'' +
+				", name='" + name + '\'' +
+				", password='" + password + '\'' +
+				", age=" + age +
+				", salary=" + salary +
+				'}';
 	}
-
-
 }

@@ -72,10 +72,10 @@ public class UserServiceImpl implements UserService{
 
 	private static List<User> populateDummyUsers(){
 		List<User> users = new ArrayList<User>();
-		users.add(new User("Sam",30, 70000));
-		users.add(new User("Tom",40, 50000));
-		users.add(new User("Jerome",45, 30000));
-		users.add(new User("Silvia",50, 40000)); // String.valueOf(counter.incrementAndGet()),
+		users.add(new User("Sam",30, 70000,"password"));
+		users.add(new User("Tom",40, 50000,"password"));
+		users.add(new User("Jerome",45, 30000,"password"));
+		users.add(new User("Silvia",50, 40000,"password")); // String.valueOf(counter.incrementAndGet()),
 		return users;
 	}
 

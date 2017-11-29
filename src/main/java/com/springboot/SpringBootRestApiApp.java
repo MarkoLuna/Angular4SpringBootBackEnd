@@ -23,8 +23,8 @@ public class SpringBootRestApiApp implements CommandLineRunner {
 	public void run(String... arg0) throws Exception {
 		this.userRepository.deleteAll();
 
-		this.userRepository.save(new User("Marcos", 23, 30000));
-		this.userRepository.save(new User("Gerardo", 17, 1000));
+		this.userRepository.save(new User("Marcos", 23, 30000, "password"));
+		this.userRepository.save(new User("Gerardo", 17, 1000,"password"));
 
 		// fetch all users
 		System.out.println("Users found with findAll():");
