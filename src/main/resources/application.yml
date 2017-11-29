@@ -1,3 +1,11 @@
 server:
   port: 8080
   contextPath: /SpringBootRestApi
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+      # host: localhost
+      # port: 27017
+      # database: test
