@@ -70,12 +70,19 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User{" +
-				"id='" + id + '\'' +
-				", name='" + name + '\'' +
-				", password='" + password + '\'' +
-				", age=" + age +
-				", salary=" + salary +
-				'}';
-	}
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", age=");
+		builder.append(age);
+		builder.append(", salary=");
+		builder.append(salary);
+		builder.append("]");
+		return builder.toString();
+		
+	}	
 }

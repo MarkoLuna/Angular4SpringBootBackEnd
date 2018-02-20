@@ -5,13 +5,14 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
-import java.util.Enumeration;
 
 import static java.util.Collections.emptyList;
 
@@ -32,7 +33,7 @@ public class TokenAuthenticationService {
 		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
 	}
 
-	static Authentication getAuthentication(HttpServletRequest request) {
+	static Authentication getAuthentication(HttpServletRequest request) throws AuthenticationServiceException{
 		String token = request.getHeader(HEADER_STRING);
 		if (token != null && !token.isEmpty()) {
 			// parse the token.
@@ -40,8 +41,21 @@ public class TokenAuthenticationService {
 			String user = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
 					.getBody().getSubject();
 
-			return user != null ? new UsernamePasswordAuthenticationToken(user, null, emptyList()) : null;
+			Date expirationDate = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
+					.getBody().getExpiration();
+			if(StringUtils.isEmpty(user)){
+				return null;
+			}
+			if(isExpirate(expirationDate)){
+				throw new AuthenticationServiceException("Token has expirated");
+			}
+
+			return new UsernamePasswordAuthenticationToken(user, null, emptyList());
 		}
 		return null;
 	}
+	private static boolean isExpirate(Date expirationDate){
+		return expirationDate.before(new Date(System.currentTimeMillis()) );
+	}
 }
+// // http://www.svlada.com/jwt-token-authentication-with-spring-boot/
