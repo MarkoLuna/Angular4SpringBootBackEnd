@@ -27,10 +27,10 @@ public class TokenAuthenticationService {
 
 	static void addAuthentication(HttpServletResponse res, String username) {
 		
-		String JWT = Jwts.builder().setSubject(username)
+		String jwt = Jwts.builder().setSubject(username)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
-		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + jwt);
 	}
 
 	static Authentication getAuthentication(HttpServletRequest request) throws AuthenticationServiceException{
@@ -58,4 +58,3 @@ public class TokenAuthenticationService {
 		return expirationDate.before(new Date(System.currentTimeMillis()) );
 	}
 }
-// // http://www.svlada.com/jwt-token-authentication-with-spring-boot/

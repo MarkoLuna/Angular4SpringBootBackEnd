@@ -67,5 +67,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return source;
 	}
 }
-// https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/
-// https://github.com/szerhusenBC/jwt-spring-security-demo

@@ -7,6 +7,8 @@
 
 target/
 
+logs/
+
 .settings/
 
 .DS_Store

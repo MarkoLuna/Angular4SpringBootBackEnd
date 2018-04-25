@@ -9,3 +9,5 @@ spring:
       # host: localhost
       # port: 27017
       # database: test
+logging:
+  file: logs/application.log
